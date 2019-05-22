@@ -20,7 +20,7 @@ npm i fedex
 import FedExAPI from 'fedex';
 
 const fedex = new FedExAPI({
-  environment: 'sandbox', // or live
+  environment: 'sandbox', // or production
   debug: true,
   key: '',
   password: '',
