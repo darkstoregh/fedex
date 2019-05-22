@@ -1,4 +1,4 @@
-# Node Shipping FedEx
+# fedex
 
 ## Notes
 
@@ -9,7 +9,7 @@ This module is a riff off of the original [node-shipping-fedex](https://www.npmj
 ## Install
 
 ```
-npm i node-shipping-fedex
+npm i fedex
 ```
 
 ## Usage
@@ -17,7 +17,7 @@ npm i node-shipping-fedex
 ### Init
 
 ```js
-import FedExAPI from 'node-shipping-fedex';
+import FedExAPI from 'fedex';
 
 const fedex = new FedExAPI({
   environment: 'sandbox', // or live
