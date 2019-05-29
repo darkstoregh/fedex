@@ -1,5 +1,5 @@
 import { test } from './test';
-import { pickup } from './utils';
+import { pickup } from './requests';
 
 test('Get pickup availability', 'it should close ground shipment', 'pickupAvailability', pickup.availability);
 

@@ -1,0 +1,147 @@
+<ProcessShipmentRequest>
+  <WebAuthenticationDetail>
+    <UserCredential>
+      <Key>XXXXXXXX</Key>
+      <Password>XXXXXXXX</Password>
+    </UserCredential>
+  </WebAuthenticationDetail>
+  <ClientDetail>
+    <AccountNumber>XXXXXXX</AccountNumber>
+    <MeterNumber>XXXXXXX</MeterNumber>
+  </ClientDetail>
+  <TransactionDetail>
+    <CustomerTransactionId>LTL EXAMPLE</CustomerTransactionId>
+  </TransactionDetail>
+  <Version>
+    <ServiceId>ship</ServiceId>
+    <Major>10</Major>
+    <Intermediate>0</Intermediate>
+    <Minor>0</Minor>
+  </Version>
+  <RequestedShipment>
+    <ShipTimestamp>2019-03-04T14:19:29.097Z</ShipTimestamp>
+    <DropoffType>REGULAR_PICKUP</DropoffType>
+    <ServiceType>FEDEX_FREIGHT_ECONOMY</ServiceType>
+    <PackagingType>YOUR_PACKAGING</PackagingType>
+    <Shipper>
+      <AccountNumber>214877600</AccountNumber>
+      <Contact>
+        <PersonName>JOE SHIPPER</PersonName>
+        <CompanyName>WIDGETS INC</CompanyName>
+        <PhoneNumber>8005551212</PhoneNumber>
+      </Contact>
+      <Address>
+        <StreetLines>1202 CHALET LN</StreetLines>
+        <StreetLines>DO NOT DELETE - TEST ACCOUNT</StreetLines>
+        <City>HARRISON</City>
+        <StateOrProvinceCode>AR</StateOrProvinceCode>
+        <PostalCode>72601</PostalCode>
+        <CountryCode>US</CountryCode>
+      </Address>
+    </Shipper>
+    <Recipient>
+      <Contact>
+        <PersonName>JOE RECIPIENT</PersonName>
+        <CompanyName>COMPANY</CompanyName>
+        <PhoneNumber>8005551212</PhoneNumber>
+      </Contact>
+      <Address>
+        <StreetLines>123 MAIN STREET</StreetLines>
+        <City>LOS ANGELES</City>
+        <StateOrProvinceCode>CA</StateOrProvinceCode>
+        <PostalCode>90028</PostalCode>
+        <CountryCode>US</CountryCode>
+        <Residential>false</Residential>
+      </Address>
+    </Recipient>
+    <ShippingChargesPayment>
+      <PaymentType>SENDER</PaymentType>
+      <Payor>
+        <AccountNumber>214877600</AccountNumber>
+        <CountryCode>US</CountryCode>
+      </Payor>
+    </ShippingChargesPayment>
+    <SpecialServicesRequested/>
+    <FreightShipmentDetail>
+      <FedExFreightAccountNumber>214877600</FedExFreightAccountNumber>
+      <FedExFreightBillingContactAndAddress>
+        <Contact>
+          <PersonName>SHIPPER BOB</PersonName>
+          <CompanyName>ACME WIDGETS</CompanyName>
+          <PhoneNumber>8005551212</PhoneNumber>
+        </Contact>
+        <Address>
+          <StreetLines>1202 CHALET LN</StreetLines>
+          <StreetLines>DO NOT DELETE - TEST ACCOUNT</StreetLines>
+          <City>HARRISON</City>
+          <StateOrProvinceCode>AR</StateOrProvinceCode>
+          <PostalCode>72601</PostalCode>
+          <CountryCode>US</CountryCode>
+        </Address>
+      </FedExFreightBillingContactAndAddress>
+      <Role>SHIPPER</Role>
+      <PaymentType>PREPAID</PaymentType>
+      <DeclaredValuePerUnit>
+        <Currency>USD</Currency>
+        <Amount>1000.00</Amount>
+      </DeclaredValuePerUnit>
+      <DeclaredValueUnits>2</DeclaredValueUnits>
+      <TotalHandlingUnits>2</TotalHandlingUnits>
+      <PalletWeight>
+        <Units>LB</Units>
+        <Value>500</Value>
+      </PalletWeight>
+      <ShipmentDimensions>
+        <Length>60</Length>
+        <Width>15</Width>
+        <Height>15</Height>
+        <Units>IN</Units>
+      </ShipmentDimensions>
+      <LineItems>
+        <FreightClass>CLASS_050</FreightClass>
+        <HandlingUnits>2</HandlingUnits>
+        <Packaging>PALLET</Packaging>
+        <Pieces>1</Pieces>
+        <BillOfLadingNumber>1234567890</BillOfLadingNumber>
+        <Description>TEST FREIGHT SHIPMENT</Description>
+        <Weight>
+          <Units>LB</Units>
+          <Value>500</Value>
+        </Weight>
+        <Dimensions>
+          <Length>60</Length>
+          <Width>15</Width>
+          <Height>15</Height>
+          <Units>IN</Units>
+        </Dimensions>
+      </LineItems>
+    </FreightShipmentDetail>
+    <LabelSpecification>
+      <LabelFormatType>FEDEX_FREIGHT_STRAIGHT_BILL_OF_LADING</LabelFormatType>
+      <ImageType>PDF</ImageType>
+      <LabelStockType>PAPER_LETTER</LabelStockType>
+    </LabelSpecification>
+    <RateRequestTypes>ACCOUNT</RateRequestTypes>
+    <PackageCount>1</PackageCount>
+    <RequestedPackageLineItems>
+      <SequenceNumber>1</SequenceNumber>
+      <GroupNumber>1</GroupNumber>
+      <GroupPackageCount>1</GroupPackageCount>
+      <InsuredValue>
+        <Currency>USD</Currency>
+        <Amount>2000.00</Amount>
+      </InsuredValue>
+      <Weight>
+        <Units>LB</Units>
+        <Value>500</Value>
+      </Weight>
+      <Dimensions>
+        <Length>60</Length>
+        <Width>15</Width>
+        <Height>15</Height>
+        <Units>IN</Units>
+      </Dimensions>
+      <PhysicalPackaging>PALLET</PhysicalPackaging>
+    </RequestedPackageLineItems>
+  </RequestedShipment>
+</ProcessShipmentRequest>

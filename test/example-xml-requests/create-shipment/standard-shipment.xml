@@ -1,0 +1,94 @@
+<ProcessShipmentRequest>
+  <WebAuthenticationDetail>
+    <UserCredential>
+      <Key>XXXXXXXXXX</Key>
+      <Password>XXXXXXXXXX</Password>
+    </UserCredential>
+  </WebAuthenticationDetail>
+  <ClientDetail>
+    <AccountNumber>XXXXXXXXXX</AccountNumber>
+    <MeterNumber>XXXXXXXXXX</MeterNumber>
+  </ClientDetail>
+  <TransactionDetail>
+    <CustomerTransactionId>** TEST TRANSACTION **</CustomerTransactionId>
+  </TransactionDetail>
+  <Version>
+    <ServiceId>ship</ServiceId>
+    <Major>13</Major>
+    <Intermediate>0</Intermediate>
+    <Minor>0</Minor>
+  </Version>
+  <RequestedShipment>
+    <ShipTimestamp>2013-11-20T18:58:51.629Z</ShipTimestamp>
+    <DropoffType>REGULAR_PICKUP</DropoffType>
+    <ServiceType>FEDEX_GROUND</ServiceType>
+    <PackagingType>YOUR_PACKAGING</PackagingType>
+    <Shipper>
+      <Contact>
+        <PersonName>Mr. Test</PersonName>
+        <CompanyName>Widgets Inc.</CompanyName>
+        <PhoneNumber>9015551212</PhoneNumber>
+      </Contact>
+      <Address>
+        <StreetLines>1234 DO NOT SHIP LANE</StreetLines>
+        <City>COLLIERVILLE</City>
+        <StateOrProvinceCode>TN</StateOrProvinceCode>
+        <PostalCode>38017</PostalCode>
+        <CountryCode>US</CountryCode>
+      </Address>
+    </Shipper>
+    <Recipient>
+      <Contact>
+        <PersonName>RECIPIENT</PersonName>
+        <CompanyName>RECIPIENT</CompanyName>
+        <PhoneNumber>9015551212</PhoneNumber>
+      </Contact>
+      <Address>
+        <StreetLines>1234 DO NOT SHIP LANE</StreetLines>
+        <City>LOS ANGELES</City>
+        <StateOrProvinceCode>CA</StateOrProvinceCode>
+        <PostalCode>90028</PostalCode>
+        <CountryCode>US</CountryCode>
+      </Address>
+    </Recipient>
+    <ShippingChargesPayment>
+      <PaymentType>SENDER</PaymentType>
+      <Payor>
+        <ResponsibleParty>
+          <AccountNumber>XXXXXXXXXX</AccountNumber>
+          <Contact/>
+        </ResponsibleParty>
+      </Payor>
+    </ShippingChargesPayment>
+    <SpecialServicesRequested>
+      <SpecialServiceTypes>EMAIL_NOTIFICATION</SpecialServiceTypes>
+      <EMailNotificationDetail>
+        <Recipients>
+          <EMailNotificationRecipientType>SHIPPER</EMailNotificationRecipientType>
+          <EMailAddress>test@test.net</EMailAddress>
+          <NotificationEventsRequested>ON_TENDER</NotificationEventsRequested>
+          <Format>HTML</Format>
+          <Localization>
+            <LanguageCode>EN</LanguageCode>
+          </Localization>
+        </Recipients>
+      </EMailNotificationDetail>
+    </SpecialServicesRequested>
+    <LabelSpecification>
+      <LabelFormatType>COMMON2D</LabelFormatType>
+      <ImageType>PDF</ImageType>
+      <LabelStockType>PAPER_LETTER</LabelStockType>
+      <LabelPrintingOrientation>BOTTOM_EDGE_OF_TEXT_FIRST</LabelPrintingOrientation>
+    </LabelSpecification>
+    <RateRequestTypes>ACCOUNT</RateRequestTypes>
+    <PackageCount>1</PackageCount>
+    <RequestedPackageLineItems>
+      <SequenceNumber>1</SequenceNumber>
+      <Weight>
+        <Units>LB</Units>
+        <Value>11.0</Value>
+      </Weight>
+    </RequestedPackageLineItems>
+  </RequestedShipment>
+</ProcessShipmentRequest>
+

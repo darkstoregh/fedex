@@ -1,3 +1,4 @@
+// eslint-disable-next-line import/prefer-default-export
 export const get = {
   ReturnTransitAndCommit: true,
   RequestedShipment: {
@@ -37,7 +38,7 @@ export const get = {
       PaymentType: 'SENDER',
       Payor: {
         ResponsibleParty: {
-          AccountNumber: process.env.FDX_ACC_NUM,
+          AccountNumber: process.env.FEDEX_ACCOUNT_NUMBER,
         },
       },
     },

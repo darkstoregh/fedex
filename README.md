@@ -26,7 +26,6 @@ const fedex = new FedExAPI({
   password: '',
   account_number: '',
   meter_number: '',
-  imperial: true, // set to false for metric
 });
 ```
 

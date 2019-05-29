@@ -1,5 +1,5 @@
 import { test } from './test';
-import { close } from './utils';
+import { close } from './requests';
 
 test('Close ground shipment', 'it should close ground shipment', 'groundclose', close.ground);
 

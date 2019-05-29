@@ -5,13 +5,14 @@ import debug from 'debug';
 
 import { serviceTypes, SO } from './serviceTypes';
 
-const logger = debug('fedex');
+const log = debug('fedex');
+log.request = debug('fedex:request');
+log.response = debug('fedex:response');
 
 export default class FedExAPI {
-  constructor({ account_number, endpoint, environment, meter_number, key, password, isProduction }) {
+  constructor({ account_number, environment, meter_number, key, password, isProduction }) {
     this.account_number = account_number;
-    this.endpoint = endpoint;
-    this.endpoint = this.isProduction ? 'https://ws.fedex.com' : 'https://wsbeta.fedex.com';
+    this.endpoint = environment === 'production' ? 'https://ws.fedex.com' : 'https://wsbeta.fedex.com';
     this.environment = environment === 'production';
     this.isProduction = isProduction;
     this.key = key;
@@ -253,12 +254,12 @@ export default class FedExAPI {
             try {
               return cb(error.root.Envelope.Body.Fault, null);
             } catch (e) {
-              logger('error: %o', error);
+              log('error: %o', error);
               return cb(error, null);
             }
           }
 
-          logger('%O', client.lastRequest);
+          log('%O', client.lastRequest);
           return cb(err, result);
         });
       },

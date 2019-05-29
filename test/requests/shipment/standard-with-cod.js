@@ -1,3 +1,4 @@
+/* eslint-disable import/prefer-default-export */
 const date = new Date();
 export const create = {
   RequestedShipment: {
@@ -38,7 +39,7 @@ export const create = {
       PaymentType: 'SENDER',
       Payor: {
         ResponsibleParty: {
-          AccountNumber: process.env.FDX_ACC_NUM,
+          AccountNumber: process.env.FEDEX_ACCOUNT_NUMBER,
         },
       },
     },
@@ -110,12 +111,4 @@ export const create = {
       },
     ],
   },
-};
-
-export const deleteShipment = {
-  TrackingId: {
-    TrackingIdType: 'GROUND', // EXPRESS || FEDEX || GROUND || USPS
-    TrackingNumber: '123456789012',
-  },
-  DeletionControl: 'DELETE_ALL_PACKAGES', // or DELETE_ONE_PACKAGE or LEGACY
 };

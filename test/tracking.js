@@ -1,4 +1,4 @@
 import { test } from './test';
-import { tracking } from './utils';
+import { trackingExpressGroundDelivered } from './requests';
 
-test('Tracking shipment', 'it should GET tracking', 'track', tracking.get);
+test('Tracking shipment', 'it should GET tracking', 'track', trackingExpressGroundDelivered.get);
