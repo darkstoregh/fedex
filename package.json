@@ -1,8 +1,8 @@
 {
   "name": "fedex",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "node library to access the fedex web service api",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "build": "babel src --out-dir ./dist --source-maps",
     "lint:fix": "eslint --fix src test",
