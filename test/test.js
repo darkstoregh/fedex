@@ -12,7 +12,7 @@ const success = res => {
   res.should.be.a('object');
 };
 
-export const test = (title, desc, fn, params) => {
+export const test = (title, desc, fn, params, testFn) => {
   describe(title, () => {
     it(desc, done => {
       const fedex = new FedExAPI({
@@ -30,6 +30,8 @@ export const test = (title, desc, fn, params) => {
         }
 
         success(res);
+
+        if (testFn) testFn(res);
 
         done();
       });
