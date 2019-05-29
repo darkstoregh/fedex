@@ -1,13 +1,13 @@
 {
   "name": "fedex",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "node library to access the fedex web service api",
   "main": "dist/index.js",
   "scripts": {
     "build": "babel src --out-dir ./dist --source-maps",
     "lint:fix": "eslint --fix src test",
     "lint": "eslint src test",
-    "post-install": "npm run build",
+    "postinstall": "npm run build",
     "precommit": "npm run lint:fix && npm run test",
     "prepublish": "npm run build",
     "test": "mocha --require @babel/register --recursive \"test/**/*.js\" --timeout 5000",
