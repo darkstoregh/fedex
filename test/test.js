@@ -1,6 +1,7 @@
 /* eslint-disable import/prefer-default-export */
 import chai from 'chai';
 import FedExAPI from '../src';
+import handleError from './requests/handleError';
 
 chai.should();
 
@@ -28,6 +29,7 @@ export const test = (title, desc, fn, params, testFn) => {
           console.debug('results from server err', err);
           error(err);
         }
+        if (handleError(done, res)) return false;
 
         success(res);
 

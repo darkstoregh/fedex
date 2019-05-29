@@ -1,3 +1,4 @@
+/* eslint-disable no-param-reassign */
 // eslint-disable-next-line import/prefer-default-export
 export const get = {
   ReturnTransitAndCommit: true,
@@ -7,30 +8,30 @@ export const get = {
     PackagingType: 'YOUR_PACKAGING',
     Shipper: {
       Contact: {
-        PersonName: 'Sender Name',
-        CompanyName: 'Company Name',
-        PhoneNumber: '5555555555',
+        PersonName: 'Mr. Test',
+        CompanyName: 'Widgets Inc.',
+        PhoneNumber: '9015551212',
       },
       Address: {
-        StreetLines: ['650 Princess Avenue'],
-        City: 'Vancouver',
-        StateOrProvinceCode: 'BC',
-        PostalCode: 'V6A3E1',
-        CountryCode: 'CA',
+        StreetLines: ['1234 DO NOT SHIP LANE'],
+        City: 'COLLIERVILLE',
+        StateOrProvinceCode: 'TN',
+        PostalCode: '38017',
+        CountryCode: 'US',
       },
     },
     Recipient: {
       Contact: {
-        PersonName: 'Recipient Name',
-        CompanyName: 'Company Receipt Name',
-        PhoneNumber: '5555555555',
+        PersonName: 'RECIPIENT',
+        CompanyName: 'RECIPIENT',
+        PhoneNumber: '9015551212',
       },
       Address: {
-        StreetLines: ['650 Princess Avenue'],
-        City: 'Vancouver',
-        StateOrProvinceCode: 'BC',
-        PostalCode: 'V6A3E1',
-        CountryCode: 'CA',
+        StreetLines: '1234 DO NOT SHIP LANE',
+        City: 'LOS ANGELES',
+        StateOrProvinceCode: 'CA',
+        PostalCode: '90028',
+        CountryCode: 'US',
         Residential: false,
       },
     },
@@ -61,7 +62,7 @@ export const get = {
           SpecialServiceTypes: 'COD',
           CodDetail: {
             CodCollectionAmount: {
-              Currency: 'CAD',
+              Currency: 'USD',
               Amount: 1,
             },
             AddTransportationChargesDetail: {
