@@ -1,6 +1,6 @@
 {
   "name": "fedex",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "node library to access the fedex web service api",
   "main": "dist/index.js",
   "husky": {
@@ -10,7 +10,7 @@
     }
   },
   "scripts": {
-    "build": "babel src --out-dir ./dist --source-maps",
+    "build": "babel src --out-dir ./dist --source-maps && cp -r ./src/wsdl ./dist/wsdl",
     "lint:fix": "eslint --fix src test",
     "lint": "eslint src test",
     "test": "mocha --require @babel/register --recursive \"test/**/*.js\" --timeout 5000",
