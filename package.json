@@ -1,15 +1,18 @@
 {
   "name": "fedex",
-  "version": "1.0.3",
+  "version": "1.0.5",
   "description": "node library to access the fedex web service api",
   "main": "dist/index.js",
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run test",
+      "pre-push": "npm run build"
+    }
+  },
   "scripts": {
-    "build": "npx babel src --out-dir ./dist --source-maps",
+    "build": "babel src --out-dir ./dist --source-maps",
     "lint:fix": "eslint --fix src test",
     "lint": "eslint src test",
-    "postinstall": "npm run build",
-    "precommit": "npm run lint:fix && npm run test",
-    "prepublish": "npm run build",
     "test": "mocha --require @babel/register --recursive \"test/**/*.js\" --timeout 5000",
     "test-ci": "NODE_ENV=test nyc mocha --require @babel/register --reporter mocha-junit-reporter --reporter-options mochaFile=reports/mocha/test-results.xml --timeout 30000 --recursive",
     "test-grep": "DEBUG=\"fedex*\" mocha --require @babel/register --recursive \"test/**/*.js\" --timeout 5000 --grep",
@@ -33,6 +36,7 @@
     "eslint-plugin-jsx-a11y": "^6.2.1",
     "eslint-plugin-prettier": "^3.1.0",
     "eslint-plugin-react": "^7.13.0",
+    "husky": "^2.3.0",
     "mocha": "^6.1.4",
     "mocha-junit-reporter": "^1.22.0",
     "nyc": "^14.1.1",
@@ -43,5 +47,8 @@
     "lodash": "^4.17.11",
     "soap": "^0.27.1",
     "xml2js": "^0.4.19"
-  }
+  },
+  "files": [
+    "/dist"
+  ]
 }
