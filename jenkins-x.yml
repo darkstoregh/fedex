@@ -15,7 +15,7 @@ pipelineConfig:
             name: npmrc
           - sh: npm ci
             name: npm-install (ci)
-          - sh: jx step credential -s fedex-env-staging -k file -f .env --optional=true
+          - sh: jx step credential -s fedex-env-staging -k file -f .env --optional=true && cat .env
             name: persist .env file
           - sh: set -o allexport && source .env && CI=true DISPLAY=:99 npm test
             name: npm-test
