@@ -15,9 +15,9 @@ pipelineConfig:
             name: npmrc
           - sh: npm ci
             name: npm-install (ci)
-          - sh: jx step credential -s fedex-env-staging -k file -f fedex-env --optional=true && set -o allexport && source ./fedex-env
-            name: source fedex env vars
-          - sh: CI=true DISPLAY=:99 npm test
+          - sh: jx step credential -s fedex-env-staging -k file -f fedex-env --optional=true
+            name: persist fedex env vars
+          - sh: set -o allexport && source ./fedex-env && CI=true DISPLAY=:99 npm test
             name: npm-test
     release:
       setVersion:
@@ -33,9 +33,9 @@ pipelineConfig:
             name: npmrc
           - sh: npm ci
             name: npm-install (ci)
-          - sh: jx step credential -s fedex-env-staging -k file -f fedex-env --optional=true && set -o allexport && source ./fedex-env
-            name: source fedex env vars
-          - sh: CI=true DISPLAY=:99 npm test
+          - sh: jx step credential -s fedex-env-staging -k file -f fedex-env --optional=true
+            name: persist fedex env vars
+          - sh: set -o allexport && source ./fedex-env && CI=true DISPLAY=:99 npm test
             name: npm-test
       postBuild:
         steps:
