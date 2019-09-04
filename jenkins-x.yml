@@ -1,0 +1,43 @@
+buildPack: ../../jenkins-x-classic/packs/javascript
+pipelineConfig:
+  env:
+    - name: GH_TOKEN
+      valueFrom:
+        secretKeyRef:
+          key: token
+          name: gh-token
+  pipelines:
+    pullRequest:
+      build:
+        replace: true
+        steps:
+          - sh: jx step credential -s npm-token -k file -f /builder/home/.npmrc --optional=true
+            name: npmrc
+          - sh: npm ci
+            name: npm-install (ci)
+          - sh: jx step credential -s fedex-env-staging -k file -f fedex-env --optional=true
+            name: persist fedex env vars
+          - sh: set -o allexport && source ./fedex-env && CI=true DISPLAY=:99 npm test
+            name: npm-test
+    release:
+      setVersion:
+        replace: true
+        steps:
+          - sh: jx step next-version --semantic-release --filename package.json --tag
+            name: next-version
+            comment: so we can retrieve the version in later steps
+      build:
+        replace: true
+        steps:
+          - sh: jx step credential -s npm-token -k file -f /builder/home/.npmrc --optional=true
+            name: npmrc
+          - sh: npm ci
+            name: npm-install (ci)
+          - sh: jx step credential -s fedex-env-staging -k file -f fedex-env --optional=true
+            name: persist fedex env vars
+          - sh: set -o allexport && source ./fedex-env && CI=true DISPLAY=:99 npm test
+            name: npm-test
+      postBuild:
+        steps:
+          - sh: npm publish
+            name: npm publish
