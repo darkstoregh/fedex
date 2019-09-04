@@ -6,11 +6,6 @@ pipelineConfig:
         secretKeyRef:
           key: token
           name: gh-token
-    - name: ROADIE_TOKEN
-      valueFrom:
-        secretKeyRef:
-          key: token
-          name: roadie
   pipelines:
     pullRequest:
       build:
@@ -20,7 +15,9 @@ pipelineConfig:
             name: npmrc
           - sh: npm ci
             name: npm-install (ci)
-          - sh: CI=true DISPLAY=:99 npm test
+          - sh: jx step credential -s fedex-env-staging -k file -f .env --optional=true
+            name: persist .env file
+          - sh: set -o allexport && source .env && CI=true DISPLAY=:99 npm test
             name: npm-test
     release:
       setVersion:
@@ -36,7 +33,9 @@ pipelineConfig:
             name: npmrc
           - sh: npm ci
             name: npm-install (ci)
-          - sh: CI=true DISPLAY=:99 npm test
+          - sh: jx step credential -s fedex-env-staging -k file -f .env --optional=true
+            name: persist .env file
+          - sh: set -o allexport && source .env && CI=true DISPLAY=:99 npm test
             name: npm-test
       postBuild:
         steps:
