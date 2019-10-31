@@ -1,5 +1,5 @@
 {
-  "name": "@darkstore/fedex",
+  "name": "@darkstoregh/fedex",
   "version": "0.0.0-development",
   "description": "node library to access the fedex web service api",
   "main": "dist/index.js",
@@ -44,7 +44,7 @@
   },
   "dependencies": {
     "debug": "^4.1.1",
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.15",
     "soap": "^0.27.1",
     "xml2js": "^0.4.19"
   },
@@ -56,6 +56,6 @@
     "url": "https://github.com/darkstoregh/fedex.git"
   },
   "publishConfig": {
-    "registry": "http://nexus-jx.104.198.21.14.nip.io/repository/npm-hosted/"
+    "registry": "https://npm.pkg.github.com/darkstoregh"
   }
 }
