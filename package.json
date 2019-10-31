@@ -13,7 +13,6 @@
     "build": "babel src --out-dir ./dist --source-maps && cp -r ./src/wsdl ./dist/wsdl",
     "lint:fix": "eslint --fix src test",
     "lint": "eslint src test",
-    "setup-semantic-release": "semantic-release-cli setup",
     "test": "mocha --require @babel/register --recursive \"test/**/*.js\" --timeout 5000",
     "test-ci": "NODE_ENV=test nyc mocha --require @babel/register --reporter mocha-junit-reporter --reporter-options mochaFile=reports/mocha/test-results.xml --timeout 30000 --recursive",
     "test-grep": "DEBUG=\"fedex*\" mocha --require @babel/register --recursive \"test/**/*.js\" --timeout 5000 --grep",
@@ -41,8 +40,7 @@
     "mocha": "^6.1.4",
     "mocha-junit-reporter": "^1.22.0",
     "nyc": "^14.1.1",
-    "prettier": "^1.17.1",
-    "semantic-release-cli": "^5.2.0"
+    "prettier": "^1.17.1"
   },
   "dependencies": {
     "debug": "^4.1.1",
