@@ -10,7 +10,7 @@
     }
   },
   "scripts": {
-    "build": "babel src --out-dir ./dist --source-maps && cp -r ./src/wsdl ./dist/wsdl",
+    "build": "babel src --out-dir ./dist --source-maps && cp -r ./src/wsdl ./dist/",
     "lint:fix": "eslint --fix src test",
     "lint": "eslint src test",
     "setup-semantic-release": "semantic-release-cli setup",
