@@ -39,5 +39,7 @@ pipelineConfig:
             name: npm-test
       postBuild:
         steps:
+          - sh: npm run build
+            name: build
           - sh: npm publish
             name: npm publish
