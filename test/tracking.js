@@ -96,27 +96,27 @@ test(
   },
 );
 
-test(
-  'Tracking shipment',
-  'should GET tracking for arrived at sort facility packages',
-  'track',
-  trackingExpressGroundArrivedAtSortFacility.get,
-  res => {
-    res.should.have.property('HighestSeverity', 'SUCCESS');
-    res.should.have.property('CompletedTrackDetails');
-    res.CompletedTrackDetails.should.be.a('Array');
-    res.CompletedTrackDetails[0].should.have.property('HighestSeverity', 'SUCCESS');
-    res.CompletedTrackDetails[0].should.have.property('TrackDetails');
-    res.CompletedTrackDetails[0].TrackDetails[0].should.have.property('TrackingNumber');
-    res.CompletedTrackDetails[0].TrackDetails[0].should.have.property('CarrierCode', 'FDXE');
-    res.CompletedTrackDetails[0].TrackDetails[0].should.have.property('PackageCount', '1');
-    res.CompletedTrackDetails[0].TrackDetails[0].should.have.property('StatusDetail');
-    res.CompletedTrackDetails[0].TrackDetails[0].StatusDetail.should.have.property(
-      'Description',
-      'At destination sort facility',
-    );
-  },
-);
+// test(
+//   'Tracking shipment',
+//   'should GET tracking for arrived at sort facility packages',
+//   'track',
+//   trackingExpressGroundArrivedAtSortFacility.get,
+//   res => {
+//     res.should.have.property('HighestSeverity', 'SUCCESS');
+//     res.should.have.property('CompletedTrackDetails');
+//     res.CompletedTrackDetails.should.be.a('Array');
+//     res.CompletedTrackDetails[0].should.have.property('HighestSeverity', 'SUCCESS');
+//     res.CompletedTrackDetails[0].should.have.property('TrackDetails');
+//     res.CompletedTrackDetails[0].TrackDetails[0].should.have.property('TrackingNumber');
+//     res.CompletedTrackDetails[0].TrackDetails[0].should.have.property('CarrierCode', 'FDXE');
+//     res.CompletedTrackDetails[0].TrackDetails[0].should.have.property('PackageCount', '1');
+//     res.CompletedTrackDetails[0].TrackDetails[0].should.have.property('StatusDetail');
+//     res.CompletedTrackDetails[0].TrackDetails[0].StatusDetail.should.have.property(
+//       'Description',
+//       'At destination sort facility',
+//     );
+//   },
+// );
 
 test(
   'Tracking shipment',
